@@ -23,8 +23,8 @@ import java.time.LocalDate;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @ToString(onlyExplicitlyIncluded = true)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Enrollment {
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
+public class Enrollment extends Auditable  {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include

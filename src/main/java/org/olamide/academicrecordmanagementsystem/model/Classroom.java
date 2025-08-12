@@ -15,8 +15,8 @@ import java.util.Set;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @ToString(onlyExplicitlyIncluded = true)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Classroom {
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
+public class Classroom extends Auditable  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
