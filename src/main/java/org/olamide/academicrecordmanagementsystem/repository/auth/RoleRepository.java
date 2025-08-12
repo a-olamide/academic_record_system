@@ -1,6 +1,6 @@
-package org.olamide.academicrecordmanagementsystem.repository;
+package org.olamide.academicrecordmanagementsystem.repository.auth;
 
-import org.olamide.academicrecordmanagementsystem.model.Role;
+import org.olamide.academicrecordmanagementsystem.model.auth.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.olamide.academicrecordmanagementsystem.enums.RoleName;
 

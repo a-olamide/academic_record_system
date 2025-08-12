@@ -1,4 +1,4 @@
-package org.olamide.academicrecordmanagementsystem.model;
+package org.olamide.academicrecordmanagementsystem.model.auth;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,7 +1,8 @@
-package org.olamide.academicrecordmanagementsystem.model;
+package org.olamide.academicrecordmanagementsystem.model.auth;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.olamide.academicrecordmanagementsystem.model.Auditable;
 
 import java.util.HashSet;
 import java.util.Set;

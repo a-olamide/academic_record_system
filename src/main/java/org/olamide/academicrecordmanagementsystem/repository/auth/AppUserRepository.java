@@ -1,6 +1,6 @@
-package org.olamide.academicrecordmanagementsystem.repository;
+package org.olamide.academicrecordmanagementsystem.repository.auth;
 
-import org.olamide.academicrecordmanagementsystem.model.AppUser;
+import org.olamide.academicrecordmanagementsystem.model.auth.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
