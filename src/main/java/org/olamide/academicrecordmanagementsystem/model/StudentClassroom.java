@@ -13,6 +13,7 @@ import java.time.LocalDate;
                 @Index(name="ix_sc_student_status", columnList="student_id,status")
         })
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
@@ -25,7 +26,7 @@ public class StudentClassroom extends Auditable {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "student_id") @Setter
+    @JoinColumn(name = "student_id")
     @ToString.Exclude
     private Student student;
 

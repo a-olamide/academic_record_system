@@ -6,6 +6,8 @@ import org.olamide.academicrecordmanagementsystem.dto.StudentDto;
 import org.olamide.academicrecordmanagementsystem.dto.UpdateStudentRequest;
 import org.olamide.academicrecordmanagementsystem.model.Student;
 
+
+
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface StudentMapper {
@@ -18,8 +20,10 @@ public interface StudentMapper {
     @Mapping(target = "classroomMemberships", ignore = true)
     @Mapping(target = "cgpa", constant = "0.0")
     // default status to ACTIVE when null
-    @Mapping(target = "status", expression =
-            "java(req.status() != null ? req.status() : StudentStatus.ACTIVE)")
+    @Mapping(
+            target = "status",
+            expression = "java(req.status() != null ? req.status() : org.olamide.academicrecordmanagementsystem.enums.StudentStatus.ACTIVE)"
+    )
     @Mapping(target = "dateOfGraduation", ignore = true) // set later when status=GRADUATED
     Student toEntity(CreateStudentRequest req);
 

@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "courses",
         indexes = @Index(name = "ix_courses_code", columnList = "courseCode", unique = true))
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder

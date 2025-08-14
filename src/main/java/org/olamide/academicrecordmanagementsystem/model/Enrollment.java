@@ -19,6 +19,7 @@ import java.time.LocalDate;
                 @Index(name = "ix_enroll_course", columnList = "course_id")
         })
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder

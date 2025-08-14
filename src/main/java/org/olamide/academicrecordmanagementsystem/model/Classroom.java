@@ -11,6 +11,7 @@ import java.util.Set;
         uniqueConstraints = @UniqueConstraint(name="uq_classrooms_building_room",
                 columnNames={"buildingName","roomNumber"}))
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
