@@ -36,10 +36,6 @@ Date: August 13, 2025
 - **Deployment**: Deploy the application to production environments.
 - **Maintenance**: Monitor, scale, and plan future enhancements.
 
-**Diagram Placeholder**:  
-![SDLC Diagram](/Users/nandar/SWE/swe-course-project/screenshots/agile.png)
-*Note*: Include a circular or linear diagram showing the SDLC phases with brief descriptions.
-
 ---
 
 ## 2. Planning and Requirements Analysis (Presented by Olamide - Solutions Architect)
@@ -72,8 +68,7 @@ Date: August 13, 2025
     - A secure, user-friendly, and scalable system to manage academic records, streamline registration, and support grading workflows.
     - Support for multiple user roles including students, faculty, and academic administrators.
 
-
-![Problem Scenario](/Users/nandar/SWE/swe-course-project/screenshots/context_diagram.png)
+<img width="2416" height="1228" alt="image" src="https://github.com/user-attachments/assets/c54921c0-b013-4da3-adde-1f78d7eb998c" />
 
 ---
 
@@ -90,14 +85,19 @@ Date: August 13, 2025
 - Submit Grades: As a faculty member, I want to submit grades for students in my courses, so I can complete my teaching responsibilities.
 - View Enrolled Students: As a faculty member, I want to view the list of students enrolled in my courses, so I can manage attendance and grading.
 
-**Admin Use Cases**:
-- Manage Student Records: As an admin, I want to create, update, and archive student records, so I can maintain accurate academic data.
-- Manage Course Catalog: As an admin, I want to add, update, and remove courses from the catalog, so I can ensure offerings are current.
-- Assign Faculty to Courses: As an admin, I want to assign faculty members to courses, so I can coordinate teaching assignments.
+**Registrar Use Cases**:
+- Manage Student Records: As a registrar, I want to create, update, and archive student records, so I can maintain accurate academic data.
+- Manage Course Catalog: As a registrar, I want to add, update, and remove courses from the catalog, so I can ensure offerings are current.
+- Assign Student to Courses: As a registrar, I want to assign students to courses, so I can coordinate course assignments.
+- Assign Student to Classroom: As a registrar, I want to assign students to classroom, so I can coordinate classroom assignments.
 
-
+**Ad,min Use Cases**:
+- Manage User profile: As an admin, I want to create, update, and manage user profile, so they can access the system.
+- Manage Role: As an admin, I want to add, update, and assign roles to users, so users have access to the only features recommended by the institution.
+- 
 **Diagram Placeholder**:  
-![Use Case Diagram](/Users/nandar/SWE/swe-course-project/screenshots/ARMS-usecase-diagram.png)
+<img width="470" height="844" alt="image" src="https://github.com/user-attachments/assets/10b3df6b-75c1-48cd-89af-1e3f16f06784" />
+
 *Note*: Include a use case diagram showing actors (Student, Faculty, and Admin) and use cases (View Academic Records, Register for Courses, and Submit Grades etc.) with relationships.
 
 ---
@@ -112,7 +112,8 @@ Date: August 13, 2025
 - **Infrastructure**: AWS services (S3, EC2, CloudWatch for monitoring, Auto Scaling for scalability).
 
 **Diagram Placeholder**:  
-![Architecture Diagram](/Users/nandar/SWE/swe-course-project/screenshots/architecture.png)
+<img width="930" height="974" alt="architecture" src="https://github.com/user-attachments/assets/b2e70b77-dbe3-464d-83a6-e0c11301f2ef" />
+
 *Note*: Include a diagram showing:
 - Frontend (React) on S3.
 - Backend (Spring Boot) on EC2 with MySQL.
@@ -137,9 +138,7 @@ Date: August 13, 2025
     - Student ↔ StudentClassroom ↔ Classroom: Many-to-Many (via StudentClassroom)
     - Course ↔ Course (prerequisites): Self-referencing Many-to-Many
     - Transcript ↔ Student: One-to-One (or One-to-Many if multiple transcripts over time)
-
-
-![Class Diagrm](/Users/nandar/SWE/swe-course-project/screenshots/ARMS-class-diagram.png)
+<img width="930" height="974" alt="architecture" src="https://github.com/user-attachments/assets/fd553511-dcfd-48bf-a855-4cc6fc42d9b3" />
 
 ---
 
@@ -163,9 +162,7 @@ Date: August 13, 2025
   14. EnrollmentController creates Enrollment records in the Database.
   15. Database confirms enrollment creation.
   16. EnrollmentController sends confirmation to the Web Interface for display.
-
-![Sequence Diagram](/Users/nandar/SWE/swe-course-project/screenshots/ARMS-student-sequence-diagram.png)
-
+  <img width="3118" height="3840" alt="ARMS-student-sequence-diagram" src="https://github.com/user-attachments/assets/d6fe0cd2-f615-426a-9535-8b2ae9b20542" />
 
 ---
 
@@ -199,7 +196,8 @@ Date: August 13, 2025
     - Challenge: Managing many-to-many relationships for Student–Course and Student–Classroom.
     - Solution: Created explicit linking entities (Enrollment and StudentClassroom) to store association data and handle additional fields (e.g., enrollment date).
 
-*Note*: Show Swagger UI with endpoints like `/api/students`.
+*Note*: Show Swagger UI with endpoints
+https://arms-webapp.azurewebsites.net/swagger-ui/index.html
 
 ---
 
