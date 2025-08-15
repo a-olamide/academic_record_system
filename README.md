@@ -100,6 +100,9 @@ Date: August 13, 2025
 
 *Note*: Include a use case diagram showing actors (Student, Faculty, and Admin) and use cases (View Academic Records, Register for Courses, and Submit Grades etc.) with relationships.
 
+*User Story Map*
+<img width="1500" height="598" alt="image" src="https://github.com/user-attachments/assets/433108ca-b6d2-49cc-bae9-0fc730afb2ec" />
+
 ---
 
 ## 3. Design Phase (Presented by Olamide - Backend Engineer)
@@ -138,7 +141,7 @@ Date: August 13, 2025
     - Student ↔ StudentClassroom ↔ Classroom: Many-to-Many (via StudentClassroom)
     - Course ↔ Course (prerequisites): Self-referencing Many-to-Many
     - Transcript ↔ Student: One-to-One (or One-to-Many if multiple transcripts over time)
-<img width="930" height="974" alt="architecture" src="https://github.com/user-attachments/assets/fd553511-dcfd-48bf-a855-4cc6fc42d9b3" />
+    <img width="2188" height="1284" alt="image" src="https://github.com/user-attachments/assets/62299168-ca57-4e08-884c-3258ab31c738" />
 
 ---
 
