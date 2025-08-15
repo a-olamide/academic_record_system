@@ -38,7 +38,7 @@ Date: August 13, 2025
 
 ---
 
-## 2. Planning and Requirements Analysis (Presented by Olamide - Solutions Architect)
+## 2 Planning and Requirements Analysis (Presented by Olamide - Solutions Architect)
 
 ###  4: Planning Phase
 **Planning Phase**
@@ -242,6 +242,25 @@ https://arms-webapp.azurewebsites.net/swagger-ui/index.html
 - **Test Coverage**:
     - Backend: 85% coverage.
     - Frontend: 80% coverage.
+
+---
+
+## 15. Deployment
+
+**Deployment summary (Azure)**
+- **Containerize the app (Spring Boot):** build a Docker image that listens on 0.0.0.0:8080, push it to Azure Container Registry (ACR).
+    <img width="940" height="454" alt="image" src="https://github.com/user-attachments/assets/3311e4ac-6ed1-4467-b37c-9010d6af039c" />
+- **Create Web App for Containers and point it to the ACR image** (use Managed Identity + AcrPull).
+  <img width="1512" height="849" alt="image" src="https://github.com/user-attachments/assets/9ba9480e-719d-4baa-8bf1-29a87998a7ae" />
+
+- **Provision Azure Database for MySQL – Flexible Server** (dev: public access enabled), create the DB and an app user, and grant privileges.
+  <img width="1608" height="846" alt="image" src="https://github.com/user-attachments/assets/eaf73ce2-84c2-4332-ab83-471785e882e2" />
+
+- **Configure App Settings on the Web App** (no secrets in the image):
+    WEBSITES_PORT=8080, SERVER_ADDRESS=0.0.0.0, SERVER_PORT=8080
+    SPRING_DATASOURCE_URL=jdbc:mysql://<server>.mysql.database.azure.com:3306/<db>?sslMode=REQUIRED
+    SPRING_DATASOURCE_USERNAME=<user>, SPRING_DATASOURCE_PASSWORD=<password>
+- Enable container logs, restart the app, and verify health (optionally set /actuator/health as Health check).
 
 
 ---
