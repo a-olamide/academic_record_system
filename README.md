@@ -242,6 +242,12 @@ https://arms-webapp.azurewebsites.net/swagger-ui/index.html
 - **Test Coverage**:
     - Backend: 85% coverage.
     - Frontend: 80% coverage.
+<img width="1181" height="807" alt="image" src="https://github.com/user-attachments/assets/6689f9d9-ec11-4862-a893-5a5db8fb010d" />
+
+<img width="1125" height="908" alt="image" src="https://github.com/user-attachments/assets/47c2b00d-2f22-4754-8883-d510ca9ad258" />
+
+<img width="1688" height="960" alt="image" src="https://github.com/user-attachments/assets/e11272ee-debc-45f3-aa43-c23dac685eba" />
+
 
 ---
 
