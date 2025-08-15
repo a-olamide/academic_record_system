@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/registrar")
@@ -82,6 +83,18 @@ public class RegistrarController {
     public ResponseEntity<ApiResponse<BulkOperationResult<Long>>> assignStudentsToClassroom(
             @Valid @RequestBody AddStudentsToClassroomRequest req) {
         var result = classroomService.addStudents(req);
+        return ResponseEntity.ok(ApiResponse.ok(result));
+    }
+
+    @PostMapping("/classroom")
+    public ResponseEntity<ApiResponse<ClassroomResponseDto>> createClassroom(
+            @Valid @RequestBody ClassroomRequestDto req) {
+        var result = classroomService.createClassroom(req);
+        return ResponseEntity.ok(ApiResponse.ok(result));
+    }
+    @GetMapping("/classrooms")
+    public ResponseEntity<ApiResponse<List<ClassroomResponseDto>>> getClassrooms() {
+        var result = classroomService.getAllClassrooms();
         return ResponseEntity.ok(ApiResponse.ok(result));
     }
 

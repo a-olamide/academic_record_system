@@ -1,10 +1,14 @@
 package org.olamide.academicrecordmanagementsystem.service.impl;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.olamide.academicrecordmanagementsystem.dto.AddStudentsToClassroomRequest;
 import org.olamide.academicrecordmanagementsystem.dto.BulkOperationResult;
+import org.olamide.academicrecordmanagementsystem.dto.ClassroomRequestDto;
+import org.olamide.academicrecordmanagementsystem.dto.ClassroomResponseDto;
 import org.olamide.academicrecordmanagementsystem.enums.ClassroomMembershipStatus;
 import org.olamide.academicrecordmanagementsystem.exception.NotFoundException;
+import org.olamide.academicrecordmanagementsystem.mapper.ClassroomMapper;
 import org.olamide.academicrecordmanagementsystem.model.Student;
 import org.olamide.academicrecordmanagementsystem.model.StudentClassroom;
 import org.olamide.academicrecordmanagementsystem.repository.ClassroomRepository;
@@ -29,6 +33,7 @@ public class ClassroomServiceImpl implements ClassroomService {
     private final StudentRepository studentRepo;
     private final ClassroomRepository classroomRepo;
     private final StudentClassroomRepository scRepo;
+    private final ClassroomMapper classroomMapper;
 
     @Override
     public Long startMembership(Integer studentId, Integer classroomId, LocalDate startDate) {
@@ -36,6 +41,23 @@ public class ClassroomServiceImpl implements ClassroomService {
         var classroom = classroomRepo.findById(classroomId).orElseThrow(() -> new NotFoundException("Classroom not found"));
         var sc = StudentClassroom.start(student, classroom, startDate);
         return scRepo.save(sc).getId();
+    }
+
+    @Override
+    public ClassroomResponseDto createClassroom(ClassroomRequestDto classroomRequestDto) {
+        var saved = classroomRepo.save(classroomMapper.toEntity(classroomRequestDto));
+        return classroomMapper.toDto(saved);
+    }
+
+    @Override
+    public List<ClassroomResponseDto> getAllClassrooms() {
+        return classroomRepo.findAll().stream().map(classroomMapper::toDto).toList();
+    }
+
+    @Override
+    public ClassroomResponseDto getClassroomById(Integer classroomId) {
+        var classroom= classroomRepo.findById(classroomId).orElseThrow(() -> new EntityNotFoundException("Classroom not found"));
+        return classroomMapper.toDto(classroom);
     }
 
     @Override
