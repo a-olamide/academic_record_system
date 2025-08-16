@@ -225,7 +225,7 @@ https://arms-webapp.azurewebsites.net/swagger-ui/index.html
 
 <img width="1891" height="936" alt="image" src="https://github.com/user-attachments/assets/0c3ac54a-e452-4d09-9ce7-da62351da205" />
 
-
+Link: https://nice-forest-0bae1c010.1.azurestaticapps.net/
 
 ---
 
