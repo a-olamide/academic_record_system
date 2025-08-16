@@ -217,6 +217,15 @@ https://arms-webapp.azurewebsites.net/swagger-ui/index.html
     - Challenge: Form validation for enrollment.
     - Solution: Added client-side validation.
 
+<img width="1863" height="944" alt="image" src="https://github.com/user-attachments/assets/b2a7e270-6363-4a59-bd18-c8fa597a3829" />
+
+<img width="1892" height="951" alt="image" src="https://github.com/user-attachments/assets/8ff3b466-6bf4-4445-8ced-73e4922c5b87" />
+
+<img width="1908" height="769" alt="image" src="https://github.com/user-attachments/assets/381befa7-f1d0-4b7d-b36e-b7ede624a4aa" />
+
+<img width="1891" height="936" alt="image" src="https://github.com/user-attachments/assets/0c3ac54a-e452-4d09-9ce7-da62351da205" />
+
+
 
 ---
 
